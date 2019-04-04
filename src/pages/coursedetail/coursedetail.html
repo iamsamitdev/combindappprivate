@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{courseDetailData.cname}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div>
+    <img src="{{imgPaht}}{{courseDetailData.cimage}}" alt="">
+    <div padding>
+      <ion-card-title>
+          {{courseDetailData.cname}}
+      </ion-card-title>
+      <div [innerHtml]="courseDetailData.cdetail"></div>
+      <ion-grid>
+        <ion-row>
+          <ion-col text-left>
+              {{courseDetailData.cprice | number:'0.2-2'}} บาท
+          </ion-col>
+          <ion-col text-right>
+              {{courseDetailData.cdate | date:'dd/MM/yyyy'}}
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </div>
+</ion-content>

@@ -7,6 +7,22 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content>
 
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <ion-list>
+
+    <ion-item *ngFor="let course of courseData">
+      <ion-thumbnail item-start>
+        <img src="{{imgPath}}{{course.images}}">
+      </ion-thumbnail>
+      <h2>{{ course.name }}</h2>
+      <p>{{ course.description }}</p>
+      <button ion-button outline item-end (click)="showCourseDetail(course.id)">View</button>
+    </ion-item>
+
+  </ion-list>
 </ion-content>
