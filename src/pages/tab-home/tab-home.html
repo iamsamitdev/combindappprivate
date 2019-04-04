@@ -1,0 +1,107 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle="left">
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>หน้าหลัก</ion-title>
+    
+    <ion-buttons right>
+
+      <button ion-button icon-only *ngIf="!checkLoginStatus">{{usernameLogin}}</button>
+      
+      <div *ngIf="checkLoginStatus">
+        <button ion-button icon-only (click)="login()">
+          <ion-icon name="unlock"></ion-icon> Login
+        </button>
+        <button ion-button icon-only (click)="register()">
+          <ion-icon name="create"></ion-icon> Register
+        </button>
+      </div>
+
+    </ion-buttons>
+
+
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-slides pager autoplay="3000" loop>
+    <ion-slide>
+      <img src="assets/imgs/slide1.jpg" alt="">
+    </ion-slide>
+    <ion-slide>
+      <img src="assets/imgs/slide2.jpg" alt="">
+    </ion-slide>
+    <ion-slide>
+      <img src="assets/imgs/slide3.jpg" alt="">
+    </ion-slide>
+  </ion-slides>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <p>
+          <ion-icon name="heart"></ion-icon>
+        </p>
+        MENU 1
+      </ion-col>
+      <ion-col>
+        <p>
+          <ion-icon name="map"></ion-icon>
+        </p>
+        MENU 2
+      </ion-col>
+      <ion-col>
+        <p>
+          <ion-icon name="camera"></ion-icon>
+        </p>
+        MENU 3
+      </ion-col>
+    </ion-row>
+
+
+    <ion-row>
+      <ion-col>
+        <p>
+          <ion-icon name="heart"></ion-icon>
+        </p>
+        MENU 4
+      </ion-col>
+      <ion-col>
+        <p>
+          <ion-icon name="map"></ion-icon>
+        </p>
+        MENU 5
+      </ion-col>
+      <ion-col>
+        <p>
+          <ion-icon name="camera"></ion-icon>
+        </p>
+        MENU 6
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <p>
+          <ion-icon name="heart"></ion-icon>
+        </p>
+        MENU 7
+      </ion-col>
+      <ion-col>
+        <p>
+          <ion-icon name="map"></ion-icon>
+        </p>
+        MENU 8
+      </ion-col>
+      <ion-col>
+        <p>
+          <ion-icon name="camera"></ion-icon>
+        </p>
+        MENU 9
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>
