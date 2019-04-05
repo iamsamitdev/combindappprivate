@@ -1,0 +1,329 @@
+การสร้างโปรเจ็กต์ใหม่ ใน ionic framework
+---
+1. ionic start  ชื่อโปรเจ็กต์  ชื่อเทมเพลต
+    เทมเพลตมี 3 แบบ
+    - blank
+    - sidemenu
+    - tabs
+    ionic start combindapp sidemenu
+2. cd combindapp
+3. สั่งรันขึ้น browser
+    ionic serve
+4. เพิ่ม platform android
+    ควรจะตั้งชื่อ id ของแอพก่อน
+    ionic cordova platform add android
+5. ทำการ build เป็น แอพ  android
+    ionic cordova build android
+6. ทำการรันขึ้นมือถือ
+    ทดสอบว่ามองเห็นอุปกรณ์ที่เชื่อมต่อหรือไม่ 
+    adb devices
+    ionic cordova run android
+
+
+คำสั่งสร้างหน้าจอใหม่ใน Ionic framework
+---------
+ionic g page ชื่อหน้าจอที่ต้องการสร้าง
+ionic g page profile
+
+หลังจากสร้างเพจเสร็จ จะต้องไปทำการเพิ่มในไฟล์ app.module.ts
+---
+
+คำสั่งสร้างหน้าจอใหม่ใน Ionic framework
+============================
+ionic g page schedule
+ionic g page portfolio
+ionic g page payment
+ionic g page setting
+
+การเปิดหน้า page ของ ionic สามารถทำได้ 2 วิธี
+1. แบบเปิดแทนที่หน้าเดิม
+this.nav.setRoot(หน้าที่ต้องการเปิด)
+
+2. แบบเปิดขึ้นมาซ้อนหน้าเดิม
+this.nav.push(หน้าที่ที่ต้องการเปิด)
+
+สร้าง Tabs เมนู
+1. สร้างหน้าเพจสำหรับแสดง Tabs
+    ionic g page tabs
+2. หน้า tabs ย่อยจำนวน 4 tabs
+    ionic g page course
+    ionic g page service
+    ionic g page article
+    ionic g page contact
+
+
+การใช้งาน git แบบพื้นฐาน
+=====================
+Step: 1
+เช็คว่าลงโปรแกรม git ไว้หรือยัง
+git --version
+
+Step: 2
+กำหนดข้อมูลประวัติผู้ใช้ (First-Time Git Setup)
+$ git config --global user.name "John Doe"
+$ git config --global user.email johndoe@example.com
+
+Step: 3
+ติดตั้ง git ลงในโปรเจ็กต์
+git init
+
+Step: 4
+คำสั่งตรวจสอบสถานะไฟล์ 
+git status
+(สถานะไฟล์มี 3 แบบ 
+1. แบบยังไม่เก็บประวัติ (สีแดง)
+2. เก็บประวัติแล้ว (สีเขียว) 
+3. บันทึกเข้าสู่ git แล้ว (จะหายไปจากคำสั่ง git status)
+
+Step: 5 คำสั่งเก็บประวัติไฟล์
+git add -A (ทั้งหมด)
+git add .
+
+Step:6 บันทึกประวัติของไฟล์
+git commit -m 'คำอธิบาย'
+
+Step: 7 ทำการอัพโหลดไฟล์ขึ้น github (online)
+git remote add origin https://github.com/iamsamitdev/ioniccombind.git
+
+Step: 8 อัพโหลดไฟล์
+git push -u origin master
+git push --all
+
+ย้อนประวัติของ git
+git reset --hard commit_id (6 หลักแรก)
+
+การดึงจาก remote ลงมาในเครื่องล่าสุด
+git pull --all
+
+
+การนำกลับมาใช้งาน
+========================
+git clone https://github.com/iamsamitdev/ioniccombind.git
+npm install
+
+API สำหรับเชื่อมต่อกับ Application
+https://github.com/iamsamitdev/combindrestapi
+
+
+
+    var url = 'https://query.yahooapis.com/v1/public/yql?q=select%20title%2Clink%2Cdescription%20from%20rss%20where%20url%3D%22'+encodeURIComponent(feedUrl)+'%22&format=json';
+
+
+ionic g page login
+ionic g page register
+
+<a href="tel:08983979">Call</a>
+<a href="mailto:samitkoyom@gmail.com">Contact us</a>
+
+https://blog.ionicframework.com/testing-split-pane-support/
+
+https://www.youtube.com/watch?v=O0ZQbgGUeY0
+
+
+https://github.com/iamsamitdev/combindapp_wanon
+
+git add -A
+git commit -m 'update last project'
+git push --all
+
+1. ขนาดไฟล์ภาพ Icon ต้องมีขนาด 512x512
+2. เป็นสกุล png
+3 คำสั่งในการสร้างไอคอนของ ionic
+
+Splash Screen ขนาด 2732x2732
+---------------------------------------------------------
+cordova platform rm android (ลบแพลตฟอร์ม)
+cordova platform add android (เพิ่มแพลตฟอร์ม)
+ionic cordova resources android --icon
+
+ionic cordova resources android --splash
+ionic cordova build android
+ionic cordova run android
+
+app-id
+---------------
+8ace400d
+
+<script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyC3JfIbMJjjJg-aIKQOdVo5QaJt05X__3I",
+    authDomain: "ionic-push-notiexample.firebaseapp.com",
+    databaseURL: "https://ionic-push-notiexample.firebaseio.com",
+    projectId: "ionic-push-notiexample",
+    storageBucket: "",
+    messagingSenderId: "477907123305"
+  };
+  firebase.initializeApp(config);
+</script>
+
+
+AAAAb0V7_Gk:APA91bGoByy4VMqqffAesB3R8OLGv2HqB-VVWD5-mcgVaKSlawmEaCiJUYbHEzNGLms61AqK6zZa8SGo7p_Jc-tLRU3ctkw28k7xwuskK_qxVNKSFIp00bAlZiXKgBky9lXWO6AQGuUC
+
+
+sender-id
+-------------------------
+477907123305
+
+npm install --save promise-polyfill
+npm install --save @ionic/cloud-angular 
+npm install --save angularfire2 
+npm install --save firebase
+
+ionic cordova plugin add phonegap-plugin-push --variable SENDER_ID=477907123305 --save
+Step 0: ถ้ามีการ Add platform  ไว้แล้วให้ลบออกก่อน
+ionic cordova platform rm android
+
+Step 1: Add Plugin
+ionic cordova plugin add cordova-plugin-fcm --save
+
+Step 2: Add Platform
+ionic cordova platform add android
+
+Step 4: Creat firebase Project
+firebase.google.com
+go to notificatin tabs
+เลือก android 
+กำหนดชื่อ package ของแอพ เช่น com.itgenius.fcmionic
+
+Step 5: Download google-services.json
+
+Step 6: Copy google-services.json to project
+
+Setp 7: add path ใน plugin ไฟล์ FCMPlugin.gradle
+classpath 'com.google.gms:google-services:3.2.0'
+
+Step 8: run android to pc
+ionic cordova run android -l
+
+
+ขั้นตอนการทำ Push Notification บน Android
+=============================
+1. ลงทะเบียนใช้งาน firebase (onesignal)
+    https://firebase.google.com/
+2. สร้างโปรเจ็กต์ใน firebase
+3. กำหนดชื่อ App ID ลงใน firebase
+4. ดาวน์โหลดไฟล์ google-services.json มาใส่ในโปรเจ็กต์ (ใน root)
+5. ติดตั้ง Cordova Plugin ชื่อ cordova-plugin-fcm
+    (แนะนำให้ remove platform android ออกไปก่อน)
+    ionic cordova plugin add cordova-plugin-fcm
+    npm install --save @ionic-native/fcm
+6. เพิ่ม plugin ไปที่ไฟล์ app.module.ts
+7. เพิ่ม plugin ไปที่ไฟล์ app.component.ts
+8. เขียนคำสั่งลงทะเบียน Device Token
+
+
+ถอนรายชื่อส่วนเสริมออก
+ionic cordova plugin rm cordova-plugin-fcm
+
+ถอนแพลตฟอร์มแอนดรอย์ออก
+ionic cordova platform rm android
+
+เพิ่มส่วนเสริมกลับเข้าไป
+ionic cordova plugin add cordova-plugin-fcm
+
+เพิ่มแพลตฟอร์ม android กลับเข้าไป
+ionic cordova platform add android@6.4.0
+
+ทดสอบสั่ง build
+ionic cordova build android
+
+
+ขั้นตอนการสร้าง chart ใน Ionic
+=====================
+1. ติดตั้งส่วนเสริมสำหรับการสร้าง chart
+    npm install chart.js --save
+
+2. เพิ่มส่วนเสริมไฟล์ app.module.ts
+    import { Chart } from 'chart.js'
+
+3. สร้างหน้า page แสดง chart
+    ionic g page viewchart
+
+
+Inapp browser
+=================
+1. ติดตั้งส่วนเสริม inapp-browser
+    ionic cordova plugin add cordova-plugin-inappbrowser
+    npm install --save @ionic-native/in-app-browser
+
+
+
+
+
+
+
+git add .
+git commit -m 'add new page'
+git push --all
+
+
+
+
+
+
+AIzaSyCUnguMVTiwKhc8vu7OsucUtDbM23zGH3U
+
+<script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCUnguMVTiwKhc8vu7OsucUtDbM23zGH3U&callback=initMap">
+</script>
+
+bit.ly/2CS6IT3
+
+adb devices
+ionic cordova run android
+
+
+
+
+@ionic-native/file   4.5.x
+@ionic-native/file-path   4.5.x
+
+ลบรายชื่อ plugin เก่าออก
+---
+npm uninstall @ionic-native/file  --save
+npm uninstall @ionic-native/file-path  --save
+
+ติดตั้งเวอร์ชั่นเก่าลงไป
+npm install @ionic-native/transfer --save
+npm install @ionic-native/file@4.5.x  --save
+npm install @ionic-native/file-path@4.5.x  --save
+
+ดาวน์เกรดตัว plugin webview เป็น 1.2.x
+---
+ลบเวอร์ชั่นใหม่ออกก่อน
+ionic cordova plugin rm cordova-plugin-ionic-webview --save
+ติดตั้งเวอร์ชั่นเก่าแทน
+ionic cordova plugin add cordova-plugin-ionic-webview@1.2.x --save
+
+
+
+
+
+ลบ platform android
+===
+ionic cordova platform rm android
+
+ทำการ add กลับเข้าไปใหม่
+===
+ionic cordova platform add android
+
+คำสั่งสำหรับย่อภาพ Splash
+ionic cordova resources android --splash
+
+APK มี 2 แบบ
+1. app-debug.apk ทดสอบ
+2. app-release.apk นำไปใช้งาน (อัพโหลดขึ้น store)
+
+
+
+
+
+
+
+
+
+
+
+

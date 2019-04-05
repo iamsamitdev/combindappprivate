@@ -1,15 +1,20 @@
-<!--
-  Generated template for the MapsPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
   <ion-navbar>
-    <ion-title>maps</ion-title>
+    <ion-title>Maps</ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col text-left>
+        Lat: {{ lat }}
+      </ion-col>
+      <ion-col text-right>
+        Lon: {{ lon }}
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 
+  <div #map class="map"></div>
 </ion-content>

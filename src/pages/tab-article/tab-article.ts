@@ -1,12 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the TabArticlePage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { IonicPage, NavController, NavParams, Platform } from 'ionic-angular';
+import { Shake } from '@ionic-native/shake';
 
 @IonicPage()
 @Component({
@@ -15,11 +9,25 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class TabArticlePage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  randNumber = 0;
+
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    private shake: Shake,
+    public platform: Platform) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad TabArticlePage');
+    
+    if (!this.platform.is('core')) 
+    {
+      this.platform.ready().then(() => {
+        this.shake.startWatch().subscribe(data => {
+          this.randNumber = Math.floor((Math.random() * 500) + 1);
+        });
+      });
+    }
   }
 
 }

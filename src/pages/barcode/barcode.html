@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Scan Barcode</ion-title>
+  </ion-navbar>
+  <ion-toolbar>
+    <ion-segment [(ngModel)]="scantabs" color="light">
+      <ion-segment-button value="scancode">
+        Scan Code
+      </ion-segment-button>
+      <ion-segment-button value="mycode">
+        My Code
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div [ngSwitch]="scantabs">
+
+    <ion-list *ngSwitchCase="'scancode'">
+      <ion-item>
+          <button ion-button full (click)="Scan()">Scan</button>
+          <ion-card>
+              <ion-card-content>
+                <ion-list>
+                  <div ion-item *ngFor="let item of data">
+                    <a href="{{item}}">{{item}}</a>
+                  </div>
+                </ion-list>
+              </ion-card-content>
+            </ion-card>
+      </ion-item>
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'mycode'">
+      <ion-item>
+        <p text-center><img src="{{qrcodeURL}}" alt=""></p>
+        <p text-center>{{ qrcodeURL }}</p>
+      </ion-item>
+    </ion-list>
+
+  </div>
+
+</ion-content>

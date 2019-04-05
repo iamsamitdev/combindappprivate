@@ -43,7 +43,7 @@
 
   <ion-grid>
     <ion-row>
-      <ion-col (click)="takeCamera()">
+      <ion-col (click)="gotoCamera()">
         <p>
           <ion-icon name="camera"></ion-icon>
         </p>
@@ -65,21 +65,21 @@
 
 
     <ion-row>
-      <ion-col>
+      <ion-col (click)="gotoScan()">
         <p>
-          <ion-icon name="heart"></ion-icon>
+          <ion-icon name="barcode"></ion-icon>
         </p>
-        MENU 4
+        Scan
+      </ion-col>
+      <ion-col (click)="vibrate()">
+        <p>
+          <ion-icon name="menu"></ion-icon>
+        </p>
+        Vibration
       </ion-col>
       <ion-col>
         <p>
-          <ion-icon name="map"></ion-icon>
-        </p>
-        MENU 5
-      </ion-col>
-      <ion-col>
-        <p>
-          <ion-icon name="camera"></ion-icon>
+          <ion-icon name="more"></ion-icon>
         </p>
         MENU 6
       </ion-col>
@@ -88,19 +88,19 @@
     <ion-row>
       <ion-col>
         <p>
-          <ion-icon name="heart"></ion-icon>
+          <ion-icon name="more"></ion-icon>
         </p>
         MENU 7
       </ion-col>
       <ion-col>
         <p>
-          <ion-icon name="map"></ion-icon>
+          <ion-icon name="more"></ion-icon>
         </p>
         MENU 8
       </ion-col>
       <ion-col>
         <p>
-          <ion-icon name="camera"></ion-icon>
+          <ion-icon name="more"></ion-icon>
         </p>
         MENU 9
       </ion-col>

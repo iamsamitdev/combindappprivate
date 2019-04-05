@@ -30,6 +30,25 @@ import { CoursedetailPage } from '../pages/coursedetail/coursedetail';
 // Camera Native Plugin
 import { Camera } from '@ionic-native/camera'
 
+// Geolocation
+import { Geolocation } from '@ionic-native/geolocation';
+import { CameraPage } from '../pages/camera/camera';
+
+// FILE UPLOAD
+import { File } from '@ionic-native/file';
+import { Transfer } from '@ionic-native/transfer';
+import { FilePath } from '@ionic-native/file-path';
+import { BarcodePage } from '../pages/barcode/barcode';
+
+// BarCode Scan
+import { BarcodeScanner } from '@ionic-native/barcode-scanner';
+
+// Vibration
+import { Vibration } from '@ionic-native/vibration';
+
+// Shake
+import { Shake } from '@ionic-native/shake';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -46,7 +65,9 @@ import { Camera } from '@ionic-native/camera'
     LoginPage,
     RegisterPage,
     CoursedetailPage,
-    MapsPage
+    MapsPage,
+    CameraPage,
+    BarcodePage
   ],
   imports: [
     BrowserModule,
@@ -69,15 +90,24 @@ import { Camera } from '@ionic-native/camera'
     LoginPage,
     RegisterPage,
     CoursedetailPage,
-    MapsPage
+    MapsPage,
+    CameraPage,
+    BarcodePage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    { provide: ErrorHandler, useClass: IonicErrorHandler },
     WebapiServiceProvider,
     GlobalvarProvider,
-    Camera
+    Camera,
+    Geolocation,
+    File,
+    Transfer,
+    FilePath,
+    BarcodeScanner,
+    Vibration,
+    Shake
   ]
 })
-export class AppModule {}
+export class AppModule { }
