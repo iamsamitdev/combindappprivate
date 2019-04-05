@@ -18,6 +18,8 @@ import { TabContactPage } from '../pages/tab-contact/tab-contact';
 import { TabsPage } from '../pages/tabs/tabs';
 import { LoginPage } from '../pages/login/login';
 import { RegisterPage } from '../pages/register/register';
+import { MapsPage } from '../pages/maps/maps';
+
 
 // Web API
 import { WebapiServiceProvider } from '../providers/webapi-service/webapi-service';
@@ -43,7 +45,8 @@ import { Camera } from '@ionic-native/camera'
     TabsPage,
     LoginPage,
     RegisterPage,
-    CoursedetailPage
+    CoursedetailPage,
+    MapsPage
   ],
   imports: [
     BrowserModule,
@@ -65,7 +68,8 @@ import { Camera } from '@ionic-native/camera'
     TabsPage,
     LoginPage,
     RegisterPage,
-    CoursedetailPage
+    CoursedetailPage,
+    MapsPage
   ],
   providers: [
     StatusBar,
